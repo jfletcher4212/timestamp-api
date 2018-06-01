@@ -64,6 +64,19 @@ app.route('/:date')
       res.send(retVal);
 });
 
+app.route('/api/timestamp/:date?')
+  .get( (req, res) => {
+  let date = new Date();
+    if(req.params.date){
+      date = new Date(req.params.date)
+      if(isNaN(date.getTime())) {
+        res.send({error: "Invalid date"});
+        return
+      }
+    }
+    res.send({unix: date.getTime(), utc: date.toUTCString()});
+  });
+
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
   res.status(404);
