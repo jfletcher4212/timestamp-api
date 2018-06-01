@@ -68,7 +68,11 @@ app.route('/api/timestamp/:date?')
   .get( (req, res) => {
   let date = new Date();
     if(req.params.date){
-      date = new Date(req.params.date)
+      if(Number.isInteger(parseInt(req.params.date))){
+        date = new Date(parseInt(req.params.date));
+      } else {
+        date = new Date(req.params.date)
+      }
       if(isNaN(date.getTime())) {
         res.send({error: "Invalid date"});
         return
