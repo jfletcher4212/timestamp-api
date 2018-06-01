@@ -10,32 +10,70 @@
 
    <body>
       <div class="container">
-         <h1>
-            Timestamp Microservice
+        
+        <h1>
+          Timestamp Microservice version 2.0
+        </h1>
+        <h3>
+          Pass a valid date string to GET /api/timestamp/:date_string?
+        </h3>
+        <p>
+          Valid dates are able to be parsed by the javascript function new Date(date_string). <br>
+        </p>
+        <div class="box">
+          <h3>
+            Some valid dates include:
+          </h3>
+          <ul>
+            <li>An integer representing the number of milliseconds since January 1, 1970, ex 100000000</li>
+            <li>A natural date string, ex. November 01, 2010 </li>
+          </ul>
+          <h3>
+            Example input:
+          </h3>
+          <ul>
+            <li class="example">https://timestamp-generator.glitch.me/api/timestamp/ <br></li>
+            <li class="example">https://timestamp-generator.glitch.me/api/timestamp/1288569600 <br></li>
+            <li class="example">https://timestamp-generator.glitch.me/api/timestamp/July 13, 2018 15:32:00 GMT</li>
+          </ul>
+          <h3>
+            Example output:
+          </h3>
+          <ul>
+            <li class="example">
+              {
+                "unix": 1531495920000,
+                "utc": "Fri, 13 Jul 2018 15:32:00 GMT"
+              }
+            </li>
+          </ul>
+        </div>
+        <h1>
+            Timestamp Microservice version 1.0
         </h1>
          <h3>
           Pass in either a unix timestamp or a natural language date <br>
           The API will return both the unix timestamp and natural language date as a JSON object.
         </h3>
-        <h3>
-          Example Input:
-        </h3>
-        <div>
-          <p class="example">
-            https://timestamp-generator.glitch.me/1288569600 <br>
-            https://timestamp-generator.glitch.me/November 01, 2010 <br>
-            https://timestamp-generator.glitch.me/Janeiro 15, 2018 
-          </p>
-        </div>
-        <h3>
-          Example Output:
-        </h3>
-        <div>
-          
-        
-          <p class="example">
-            {"unix":"1288569600","natural":"November 1, 2010"}
-          </p>
+        <div class="box">
+          <h3>
+            Example Input:
+          </h3>
+          <div>
+            <p class="example">
+              https://timestamp-generator.glitch.me/1288569600 <br>
+              https://timestamp-generator.glitch.me/November 01, 2010 <br>
+              https://timestamp-generator.glitch.me/Janeiro 15, 2018 
+            </p>
+          </div>
+          <h3>
+            Example Output:
+          </h3>
+          <div>
+            <p class="example">
+              {"unix":"1288569600","natural":"November 1, 2010"}
+            </p>
+          </div>
         </div>
       </div>
    </body>
